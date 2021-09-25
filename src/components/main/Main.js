@@ -45,7 +45,7 @@ function Main() {
 
   return (
     <div className="main">
-      <Heading level='1'>{t("main.title")}</Heading>
+      <Heading>{t("main.title")}</Heading>
       <Heading level='2'>{t("main.subtitle")}</Heading>
       <div className="main-list">
         {

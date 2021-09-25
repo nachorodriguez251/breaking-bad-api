@@ -5,10 +5,8 @@ import { Link, useParams } from 'react-router-dom';
 import { selectDetails, selectDetailsLoading, switchLanguage, selectLanguage, fetchDetails } from '../../store/characterSlice'
 import './details.scss'
 import '../../i18n'
-
 import Heading from '../heading/Heading';
-
-
+import PageNotFound from '../page-not-found/PageNotFound';
 
 function Details() {
   const dispatch = useDispatch()
@@ -25,6 +23,8 @@ function Details() {
   useEffect(() => {
     if (id != details.char_id) dispatch(fetchDetails(id))
   }, [])
+
+  if (isNaN(id) || id < 1 || (id > 57 && id < 112) || id > 116) return <PageNotFound />
 
   return (
     <>

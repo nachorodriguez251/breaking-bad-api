@@ -7,6 +7,7 @@ import {
 } from "react-router-dom"
 import Details from './components/details/Details'
 import Main from './components/main/Main'
+import PageNotFound from './components/page-not-found/PageNotFound'
 
 function App() {
   return (
@@ -17,6 +18,9 @@ function App() {
         </Route>
         <Route path="/character/:id">
           <Details />
+        </Route>
+        <Route path="*">
+          <PageNotFound />
         </Route>
       </Switch>
     </Router>
