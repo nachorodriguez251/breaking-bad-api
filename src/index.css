@@ -1,0 +1,26 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; 
+}
+
+html {
+  /* this defines what 1rem is
+      used to round rem */
+  font-size: 62.5%; 
+}
+
+body {
+  box-sizing: border-box; }
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  background-color: #3b3b3b;
+  font-size: 1.5rem;
+  line-height: 1.7;
+  color: #ececec;
+  padding: 3rem; 
+}

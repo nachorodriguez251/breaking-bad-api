@@ -1,0 +1,13 @@
+{
+    "main.title": "La API de Breaking Bad",
+    "main.subtitle": "Listado de Personajes",
+    "loading": "Cargando...",
+    "details.name": "Nombre",
+    "details.nickname": "Apodo",
+    "details.birthday": "Fecha de Nacimiento",
+    "details.occupation": "Empleo",
+    "details.status": "Estado",
+    "details.quote": "Cita al azar",
+    "details.return": "Volver a personajes",
+    "lang": "Switch to English"
+}

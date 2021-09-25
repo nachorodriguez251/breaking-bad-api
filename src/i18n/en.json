@@ -1,0 +1,13 @@
+{
+    "main.title": "The Breaking Bad API",
+    "main.subtitle": "Characters List",
+    "loading": "Loading...",
+    "details.name": "Name",
+    "details.nickname": "Nickname",
+    "details.birthday": "Birthday",
+    "details.occupation": "Occupation",
+    "details.status": "Status",
+    "details.quote": "Random Quote",
+    "details.return": "Return to characters",
+    "lang": "Cambiar a Español"
+}

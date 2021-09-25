@@ -1,0 +1,28 @@
+.pagination {
+    display: flex;
+    justify-content: center;
+}
+
+.page-item {
+    list-style-type: none;
+    margin: 0 .5rem;
+    
+    &:hover {
+        transition: transform 0.2s;
+        transform: translateY(-0.25rem);
+    }
+    
+    &.disabled {
+        border-bottom: 1px solid;
+        pointer-events: none;
+        &:hover {
+            transform: none;
+        }
+    }
+}
+
+
+a:visited, a:active, a:link {
+    color: #ececec;
+    text-decoration: none;
+}
