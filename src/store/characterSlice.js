@@ -21,12 +21,12 @@ export const fetchDetails = createAsyncThunk(
   'characters/fetchDetails',
   async (id, { rejectWithValue }) => {
     const res = await axios.get(`https://breakingbadapi.com/api/characters/${id}`)
+    console.log(res)
     const author = res.data[0].name.replace(' ', '+')
     const quote = await axios.get(`https://breakingbadapi.com/api/quote/random?author=${author}`)
     if (!quote.data.length) {
       return rejectWithValue({ ...res.data[0], quote: '' });
     }
-
     return ({ ...res.data[0], quote: quote.data[0].quote })
   }
 );

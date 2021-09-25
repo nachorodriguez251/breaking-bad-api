@@ -37,25 +37,25 @@ function Main() {
       .catch(err => {
         console.log(err)
       })
-  }, [page])
+  }, [page, dispatch])
 
   useEffect(() => {
     i18n.changeLanguage(lang)
-  }, [lang])
+  }, [lang, i18n])
 
   return (
     <div className="main">
       <Heading>{t("main.title")}</Heading>
-      <Heading level='2'>{t("main.subtitle")}</Heading>
+      <Heading level={2}>{t("main.subtitle")}</Heading>
       <div className="main-list">
         {
-          loading ? <div className="loading">{t("loading")}</div> :
-            characters.map((character) =>
-              <Card id={character.char_id} img={character.img} key={character.char_id} name={character.name} />
-            )}
+        loading ? <div className="loading">{t("loading")}</div> :
+          characters.map((character) =>
+            <Card id={character.char_id} img={character.img} key={character.char_id} name={character.name} />
+          )}
       </div>
-      <Pagination totalCharacters="62" charactersPerPage='4' paginate={paginate} />
-      <a type="button" onClick={() => dispatch(switchLanguage())} className="lang">{t("lang")}</a>
+      <Pagination totalCharacters={62} charactersPerPage={4} paginate={paginate} />
+      <button onClick={() => dispatch(switchLanguage())} className="lang page-link">{t("lang")}</button>
     </div>
   )
 }

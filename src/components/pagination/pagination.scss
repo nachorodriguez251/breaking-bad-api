@@ -21,8 +21,12 @@
     }
 }
 
-
-a:visited, a:active, a:link {
-    color: #ececec;
-    text-decoration: none;
+.page-link {
+    background: none;
+    color: inherit;
+    border: none;
+    font: inherit;
+    cursor: pointer;
 }
+
+

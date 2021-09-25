@@ -15,10 +15,10 @@ function Pagination({ charactersPerPage, totalCharacters, paginate }) {
     <div>
       <ul className="pagination">
         {pageNumbers.map((number) => (
-          <li key={number} className={page == number ? "page-item disabled" : "page-item"} onClick={() => paginate(number)}>
-            <a type="button" onClick={() => paginate(number)} href="#" className="page-link">
+          <li key={number} className={page === number ? "page-item disabled" : "page-item"} onClick={() => paginate(number)}>
+            <button disabled={page === number} onClick={() => paginate(number)} className="page-link">
               {number}
-            </a>
+            </button>
           </li>
         ))}
       </ul>

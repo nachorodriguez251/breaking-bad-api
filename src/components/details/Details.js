@@ -18,10 +18,11 @@ function Details() {
 
   useEffect(() => {
     i18n.changeLanguage(lang)
-  }, [lang])
+  }, [lang, i18n])
 
   useEffect(() => {
-    if (id != details.char_id) dispatch(fetchDetails(id))
+    if (id !== details.char_id) dispatch(fetchDetails(id))
+  // eslint-disable-next-line
   }, [])
 
   if (isNaN(id) || id < 1 || (id > 57 && id < 112) || id > 116) return <PageNotFound />
@@ -58,10 +59,8 @@ function Details() {
             <Link type="button" className="details-link" to={'/'}>
               {t("details.return")}
             </Link>
-            <a type="button" onClick={() => dispatch(switchLanguage())} className="lang">{t("lang")}</a>
-
+            <button onClick={() => dispatch(switchLanguage())} className="lang page-link">{t("lang")}</button>
           </div>
-
       }
     </>
   )
