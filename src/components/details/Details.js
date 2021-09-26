@@ -18,12 +18,13 @@ function Details() {
 
   useEffect(() => {
     i18n.changeLanguage(lang)
-  }, [lang, i18n])
+  // eslint-disable-next-line
+  }, [lang])
 
   useEffect(() => {
     if (id !== details.char_id) dispatch(fetchDetails(id))
   // eslint-disable-next-line
-  }, [])
+  }, [id])
 
   if (isNaN(id) || id < 1 || (id > 57 && id < 112) || id > 116) return <PageNotFound />
 
@@ -37,7 +38,7 @@ function Details() {
             <Heading>IDENTIKIT </Heading>
             <div className="details-card">
               <img src={details.img} alt={details.name} height='300' width='225' />
-              <div className="details-card-attributes">
+              <div className="details-attributes">
                 <div className="details-attributes-name">
                   {t("details.name")}: {details.name}
                 </div>
@@ -53,9 +54,14 @@ function Details() {
                 <div className="details-attributes-status">
                   {t("details.status")}: {details.status}
                 </div>
-                {t("details.quote")}: {details.quote ? details.quote : "-"}
               </div>
             </div>
+            {
+              details.quote &&
+              <div className="details-attributes-quote">
+                 &ldquo;{ details.quote }&rdquo;
+              </div>
+            }
             <Link type="button" className="details-link" to={'/'}>
               {t("details.return")}
             </Link>

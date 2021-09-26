@@ -21,7 +21,6 @@ export const fetchDetails = createAsyncThunk(
   'characters/fetchDetails',
   async (id, { rejectWithValue }) => {
     const res = await axios.get(`https://breakingbadapi.com/api/characters/${id}`)
-    console.log(res)
     const author = res.data[0].name.replace(' ', '+')
     const quote = await axios.get(`https://breakingbadapi.com/api/quote/random?author=${author}`)
     if (!quote.data.length) {
@@ -44,7 +43,6 @@ export const characterSlice = createSlice({
       state.characters = payload
     },
     setDetailsLoading: (state) => {
-      console.log('setdetailtloading')
       state.detailsLoading = true
     },
     switchLanguage: (state) => {
@@ -66,11 +64,11 @@ export const characterSlice = createSlice({
       .addCase(fetchDetails.rejected, (state, action) => {
         state.detailsLoading = false;
         state.details = action.payload;
-      });
+      })
   },
 })
 
-export const { setCharacters, setCharactersLoading, setPage, setDetails, setDetailsLoading, setQuote, switchLanguage } = characterSlice.actions;
+export const { setCharacters, setCharactersLoading, setPage, setDetailsLoading, setQuote, switchLanguage } = characterSlice.actions;
 
 export const selectCharacters = (state) => state.characters.characters
 export const selectDetails = (state) => state.characters.details
