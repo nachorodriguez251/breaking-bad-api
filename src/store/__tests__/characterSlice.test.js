@@ -7,7 +7,7 @@ import characterReducer, {
     setDetailsLoading,
     switchLanguage,
     setPage
-  } from './characterSlice';
+  } from '../characterSlice';
 
 describe('character reducer tests', () => {
   const initialState = {

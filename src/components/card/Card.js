@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types';
-import { Link, BrowserRouter as Router } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux'
-import { fetchDetails } from '../../store/characterSlice'
+import { setDetailsLoading } from '../../store/characterSlice'
 
 import './card.scss'
 
@@ -12,6 +12,7 @@ function Card({ id, img, name }) {
   return (
     <Link
       to={`/character/${id}`}
+      onClick = { () => dispatch(setDetailsLoading())}
     >
       <div className="card" >
         <img src={img} alt={name} height='300' width='225' />

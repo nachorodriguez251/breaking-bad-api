@@ -22,9 +22,9 @@ function Details() {
   }, [lang])
 
   useEffect(() => {
-    if (id !== details.char_id) dispatch(fetchDetails(id))
+    dispatch(fetchDetails(id))
   // eslint-disable-next-line
-  }, [id])
+  }, [])
 
   if (isNaN(id) || id < 1 || (id > 57 && id < 112) || id > 116) return <PageNotFound />
 
