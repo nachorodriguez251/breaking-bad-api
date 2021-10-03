@@ -13,7 +13,7 @@ function PageNotFound() {
   useEffect(() => {
     i18n.changeLanguage(lang)
   }, [lang, i18n])
-  
+
   return (
     <div className="not-found">
       <div className="not-found-title">{t("notfound")}</div>

@@ -1,5 +1,5 @@
 import React from 'react'
-import {render, screen} from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import Card from '../Card'
 import { Provider } from 'react-redux';
@@ -12,12 +12,12 @@ describe('card tests', () => {
     window.getComputedStyle = (elt) => getComputedStyle(elt);
     render(
       <Provider store={store}>
-       <BrowserRouter>
-        <Card id={1} img="img" name="character name" />
-       </BrowserRouter>
-     </Provider>
+        <BrowserRouter>
+          <Card id={1} img="img" name="character name" />
+        </BrowserRouter>
+      </Provider>
     )
-    expect(screen.getByRole('img', {name: /character name/i})).toBeVisible()
-    expect(screen.getByRole('link', {name: /character name/i})).toBeVisible()
+    expect(screen.getByRole('img', { name: /character name/i })).toBeVisible()
+    expect(screen.getByRole('link', { name: /character name/i })).toBeVisible()
   })
 })

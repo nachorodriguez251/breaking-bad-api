@@ -2,12 +2,12 @@ import { afterEach } from '@jest/globals';
 import { beforeEach, describe } from 'jest-circus';
 import moxios from 'moxios';
 import characterReducer, {
-    setCharacters,
-    setCharactersLoading,
-    setDetailsLoading,
-    switchLanguage,
-    setPage
-  } from '../characterSlice';
+  setCharacters,
+  setCharactersLoading,
+  setDetailsLoading,
+  switchLanguage,
+  setPage
+} from '../characterSlice';
 
 describe('character reducer tests', () => {
   const initialState = {
@@ -70,19 +70,19 @@ describe('character reducer async tests', () => {
 
   test('fetching characters', () => {
     const response = moxios.stubRequest('https://breakingbadapi.com/api/characters?limit=2', {
-        status: 200,
-        response: [
-            {
-            char_id: 1,
-            name: 'Walter White',
-            img: 'ww.jpg'
-            },
-            {
-            char_id: 2,
-            name: 'Jesse Pinkman',
-            img: 'jp.jpg'
-            }
-        ]
+      status: 200,
+      response: [
+        {
+          char_id: 1,
+          name: 'Walter White',
+          img: 'ww.jpg'
+        },
+        {
+          char_id: 2,
+          name: 'Jesse Pinkman',
+          img: 'jp.jpg'
+        }
+      ]
     })
     const actual = characterReducer(initialState, setCharacters(response));
     expect(actual.characters).toEqual(response);

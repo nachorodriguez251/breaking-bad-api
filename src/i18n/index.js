@@ -4,23 +4,23 @@ import enTranslation from './en.json'
 import esTranslation from './es.json'
 
 const resources = {
-    en: {
-        translation: enTranslation,
-    },
+  en: {
+    translation: enTranslation,
+  },
 
-    es: {
-        translation: esTranslation,
-    },
+  es: {
+    translation: esTranslation,
+  },
 }
 
 i18n.use(initReactI18next)
-    .init({
-        resources,
-        lng: 'en',
-        keySeparator: false,
-        interpolation: {
-            escapeValue: false,
-        }
-    })
+  .init({
+    resources,
+    lng: 'en',
+    keySeparator: false,
+    interpolation: {
+      escapeValue: false,
+    }
+  })
 
 export default i18n

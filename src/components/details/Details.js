@@ -18,12 +18,12 @@ function Details() {
 
   useEffect(() => {
     i18n.changeLanguage(lang)
-  // eslint-disable-next-line
+    // eslint-disable-next-line
   }, [lang])
 
   useEffect(() => {
     dispatch(fetchDetails(id))
-  // eslint-disable-next-line
+    // eslint-disable-next-line
   }, [])
 
   if (isNaN(id) || id < 1 || (id > 57 && id < 112) || id > 116) return <PageNotFound />
@@ -59,7 +59,7 @@ function Details() {
             {
               details.quote &&
               <div className="details-attributes-quote">
-                 &ldquo;{ details.quote }&rdquo;
+                &ldquo;{details.quote}&rdquo;
               </div>
             }
             <Link type="button" className="details-link" to={'/'}>

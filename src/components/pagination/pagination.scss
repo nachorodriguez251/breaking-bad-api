@@ -1,32 +1,30 @@
 .pagination {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .page-item {
-    list-style-type: none;
-    margin: 0 .5rem;
-    
+  list-style-type: none;
+  margin: 0 0.5rem;
+
+  &:hover {
+    transition: transform 0.2s;
+    transform: translateY(-0.25rem);
+  }
+
+  &.disabled {
+    border-bottom: 1px solid;
+    pointer-events: none;
     &:hover {
-        transition: transform 0.2s;
-        transform: translateY(-0.25rem);
+      transform: none;
     }
-    
-    &.disabled {
-        border-bottom: 1px solid;
-        pointer-events: none;
-        &:hover {
-            transform: none;
-        }
-    }
+  }
 }
 
 .page-link {
-    background: none;
-    color: inherit;
-    border: none;
-    font: inherit;
-    cursor: pointer;
+  background: none;
+  color: inherit;
+  border: none;
+  font: inherit;
+  cursor: pointer;
 }
-
-

@@ -12,7 +12,7 @@ function Card({ id, img, name }) {
   return (
     <Link
       to={`/character/${id}`}
-      onClick = { () => dispatch(setDetailsLoading())}
+      onClick={() => dispatch(setDetailsLoading())}
     >
       <div className="card" >
         <img src={img} alt={name} height='300' width='225' />
