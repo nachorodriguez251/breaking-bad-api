@@ -32,7 +32,7 @@ function Details() {
     <>
       {
         loading ?
-          <div className="loading">{t("loading")}</div>
+          <div className="loading loading-details">{t("loading")}</div>
           :
           <div className="details">
             <Heading>IDENTIKIT </Heading>
